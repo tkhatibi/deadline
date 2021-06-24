@@ -14,7 +14,7 @@ export type StoreProviderProps = {
 };
 
 export type StoreState = {
-  birthday?: string;
+  birthDate?: string;
 };
 
 export const initialStoreState: StoreState = {};
@@ -34,7 +34,7 @@ export function StoreProvider({ children }: StoreProviderProps) {
 export function useStore() {
   const [state, setState] = useContext(storeContext);
   return {
-    setBirthday: (birthday?: string) => setState({ birthday }),
+    setBirthDate: (birthDate?: string) => setState({ birthDate }),
     state,
   };
 }

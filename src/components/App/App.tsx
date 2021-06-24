@@ -1,5 +1,5 @@
 import { StoreProvider } from "../../hooks/store";
-import { BirthdayForm } from "../BirthdayForm/BirthdayForm";
+import { BirthDateForm } from "../BirthDateForm/BirthDateForm";
 import { PanicMonster } from "../PanicMonster/PanicMonster";
 import logo from "./logo.svg";
 import "./App.css";
@@ -23,7 +23,7 @@ export function App() {
       </header>
       <main>
         <StoreProvider>
-          <BirthdayForm />
+          <BirthDateForm />
           <PanicMonster />
         </StoreProvider>
       </main>

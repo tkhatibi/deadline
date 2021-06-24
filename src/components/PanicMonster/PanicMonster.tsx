@@ -12,14 +12,17 @@ export const WEEKS = YEARS * YEAR_WEEKS + 4;
 export function PanicMonster() {
   const { state } = useStore();
   const now = new Date();
-  const dob = state.birthday ? new Date(state.birthday) : undefined;
+  const birthDate = state.birthDate ? new Date(state.birthDate) : undefined;
   return (
     <div className="PanicMonster">
       {times(Math.ceil(WEEKS), (w) => {
-        const date = dob ? getDateOfMultipleDaysLater(dob, w * 7) : undefined;
+        const date = birthDate
+          ? getDateOfMultipleDaysLater(birthDate, w * 7)
+          : undefined;
         const classes = ["PanicMonster-week"];
         date && date < now && classes.push('PanicMonster-past-week');
-        const age = dob && date ? calculateAge(dob, date) : undefined;
+        const age =
+          birthDate && date ? calculateAge(birthDate, date) : undefined;
         const title = `#${w + 1}${date ? ` - ${date.toDateString()}\n${age}` : ''}`;
         return (
           <figure

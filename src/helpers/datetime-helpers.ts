@@ -66,7 +66,7 @@ export function calculateAge(dob: Date, at = new Date()) {
     ageString = "Only " + age.days + " days old!";
   //when target month and date is same as birth date and month
   else if (age.years > 0 && age.months === 0 && age.days === 0)
-    ageString = age.years + " years old. Happy Birthday!";
+    ageString = age.years + " years old. Happy BirthDate!";
   else if (age.years > 0 && age.months > 0 && age.days === 0)
     ageString = age.years + " years and " + age.months + " months old.";
   else if (age.years === 0 && age.months > 0 && age.days > 0)
