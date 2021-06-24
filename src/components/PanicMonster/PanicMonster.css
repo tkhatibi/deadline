@@ -9,5 +9,9 @@
   width: var(--size);
   height: var(--size);
   margin: 1px;
-  background-color: lightsteelblue;
+  background-color: lavender;
+}
+
+.PanicMonster-past-week {
+  background-color: darkslategrey;
 }
