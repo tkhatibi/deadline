@@ -4,8 +4,10 @@ import {
   ReactElement,
   SetStateAction,
   useContext,
-  useState,
 } from "react";
+import createPersistedState from "use-persisted-state";
+
+const usePersistedState = createPersistedState("store");
 
 export type StoreProviderProps = {
   children: ReactElement | ReactElement[];
@@ -23,7 +25,7 @@ export const storeContext =
 
 export function StoreProvider({ children }: StoreProviderProps) {
   return (
-    <storeContext.Provider value={useState(initialStoreState)}>
+    <storeContext.Provider value={usePersistedState(initialStoreState)}>
       {children}
     </storeContext.Provider>
   );
