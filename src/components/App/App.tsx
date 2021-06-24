@@ -1,8 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { StoreProvider } from "../../hooks/store";
+import { BirthDateForm } from "../BirthDateForm/BirthDateForm";
+import { PanicMonster } from "../PanicMonster/PanicMonster";
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +21,12 @@ function App() {
           Learn React
         </a>
       </header>
+      <main>
+        <StoreProvider>
+          <BirthDateForm />
+          <PanicMonster />
+        </StoreProvider>
+      </main>
     </div>
   );
 }
-
-export default App;
