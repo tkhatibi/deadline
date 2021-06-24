@@ -1,14 +1,19 @@
 import { times } from "lodash";
+import { useStore } from "../../hooks/store";
 import "./PanicMonster.css";
 
-const YEARS = 90;
+export const YEARS = 90;
 
-const YEAR_WEEKS = 52.14;
+export const YEAR_WEEKS = 52.14;
 
-function PanicMonster({ years = YEARS }) {
+export function PanicMonster({ years = YEARS }) {
+  const {
+    state: { birthday },
+  } = useStore();
   const onClick = (w: number) => alert(`you clicked on week ${w}`);
   return (
     <div className="PanicMonster">
+      {birthday}
       {times(Math.ceil(years * YEAR_WEEKS), (w) => (
         <figure
           key={w}
@@ -20,5 +25,3 @@ function PanicMonster({ years = YEARS }) {
     </div>
   );
 }
-
-export default PanicMonster;

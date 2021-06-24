@@ -1,9 +1,10 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PanicMonster from "./PanicMonster/PanicMonster";
+import { StoreProvider } from "../../hooks/store";
+import { BirthdayForm } from "../BirthdayForm/BirthdayForm";
+import { PanicMonster } from "../PanicMonster/PanicMonster";
+import logo from "./logo.svg";
+import "./App.css";
 
-function App() {
+export function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,10 +22,11 @@ function App() {
         </a>
       </header>
       <main>
-        <PanicMonster></PanicMonster>
+        <StoreProvider>
+          <BirthdayForm />
+          <PanicMonster />
+        </StoreProvider>
       </main>
     </div>
   );
 }
-
-export default App;
