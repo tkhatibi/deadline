@@ -1,0 +1,13 @@
+.PanicMonster {
+  margin: 50px;
+  overflow: auto;
+}
+
+.PanicMonster-week {
+  --size: 8px;
+  float: left;
+  width: var(--size);
+  height: var(--size);
+  margin: 1px;
+  background-color: lightsteelblue;
+}
